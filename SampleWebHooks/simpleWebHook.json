@@ -1,0 +1,17 @@
+{
+	"definition":{
+		"method":"Get",
+		"url":"https://awesome.system.local/with/path?and=query#fragment",
+		"body":null,
+		"securityLevel":"TlsWithCACheck",
+		"timeout":null,
+		"additionalHttpHeaders":null,
+		"authentication":{
+			"apiAuthenticationType":"None",
+			"expiresIn":null
+		}
+	},
+	"integrationName":"Awesome System 2000",
+	"locationName":"At Home",
+	"functionName":"Open Something"
+}
