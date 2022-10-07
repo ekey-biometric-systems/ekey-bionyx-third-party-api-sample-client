@@ -177,7 +177,7 @@ def enumerate_webhooks(config, access_token, system):
   # enumerate_webhooks gets all function webhooks available for the specified ekey bionyx system..
   # 
   # :param config: The configuration contains the API URL and the data for authorization
-  # :param access_token:  The OAuth2 access token for accessing  the 3rd party API
+  # :param access_token:  The OAuth2 access token for accessing the 3rd party API
   # :param system: the ekey bionyx system
   #
   print ("\n##### enumerate webhooks #####\n")
