@@ -3,6 +3,6 @@
 "token_url" : "https://ekeybionyxprod.b2clogin.com/ekeybionyxprod.onmicrosoft.com/B2C_1_sign_in_v2/oauth2/v2.0/token?p=B2C_1_sign_in_v2",
 "api_url" : "https://bionyx-prod.azurefd.net/3rd-party/",
 "scope" : "https://ekeybionyxprod.onmicrosoft.com/3rd-party-api/api-access",
-"callback_url" : "https://login.microsoftonline.com/common/oauth2/nativeclient/",
-"client_id" : "TBD"
+"redirect_url" : "https://login.microsoftonline.com/common/oauth2/nativeclient/",
+"client_id" : "fa2025be-3c8b-443f-a39b-bc9c93777415"
 }

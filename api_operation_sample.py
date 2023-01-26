@@ -82,7 +82,7 @@ def request_authorization(config):
 
   state = random.randint(10000, 99999)
   scope = urllib.parse.quote_plus(config['scope'])
-  redirect_uri = urllib.parse.quote_plus(config['callback_url'])
+  redirect_uri = urllib.parse.quote_plus(config['redirect_url'])
   request_url = config['authorize_url'] + '?response_type=code&client_id=' + config['client_id'] + '&redirect_uri=' + redirect_uri + '&scope=' + scope + '&response_mode=query&state=' + str(state)
 
   webbrowser.open(request_url)
@@ -110,7 +110,7 @@ def request_access_token(config, authorization_code):
   params = {
       'grant_type': 'authorization_code',
       "code": authorization_code,
-      'redirect_uri': config['callback_url']
+      'redirect_uri': config['redirect_url']
   }
 
   access_token_response = requests.post(config['token_url'], params=params, headers = {"Accept": "application/json"})
