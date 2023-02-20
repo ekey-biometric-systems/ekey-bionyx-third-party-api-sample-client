@@ -1,5 +1,4 @@
 
-from asyncio.windows_events import NULL
 import json
 from pickle import FALSE
 from pydoc import pathdirs
@@ -109,9 +108,13 @@ def request_access_token(config, authorization_code):
 
   params = {
       'grant_type': 'authorization_code',
-      "code": authorization_code,
-      'redirect_uri': config['redirect_url']
+      'code': authorization_code,
+      'redirect_uri': config['redirect_url'],
+      'client_id': config['client_id']
   }
+  
+  if 'client_secret' in config and len(config['client_secret']) > 0:
+    params['client_secret'] = config['client_secret']
 
   access_token_response = requests.post(config['token_url'], params=params, headers = {"Accept": "application/json"})
   if access_token_response.status_code >= 400:
@@ -310,27 +313,31 @@ else:
 #  Second, we need a system where we can manage the function webhooks
 systems = get_all_systems(config, access_token)
 
-while True:
-  print('\nWhich action do you want to perform?')
-  print('Enter 1 to create a function webhook')
-  print('Enter 2 to list all function webhooks')
-  print('Enter 3 to get the function webhook information')
-  print('Enter 4 to delete a function webhook (user interaction required)')
-  print('Enter 5 to update the function webhook name')
-  print('Enter 6 to update the function webhook (user interaction required)')
-  action = input('Enter 0 for Exit: ')
+if len(systems) > 0:
+  while True:
+    print('\nWhich action do you want to perform?')
+    print('Enter 1 to create a function webhook')
+    print('Enter 2 to list all function webhooks')
+    print('Enter 3 to get the function webhook information')
+    print('Enter 4 to delete a function webhook (user interaction required)')
+    print('Enter 5 to update the function webhook name')
+    print('Enter 6 to update the function webhook (user interaction required)')
+    action = input('Enter 0 for Exit: ')
 
-  if action == '1':
-    create_webhook(config, access_token, systems[0])
-  elif action == '2':  
-    enumerate_webhooks(config, access_token, systems[0])
-  elif action == '3':
-    get_webhook(config, access_token, systems[0])  
-  elif action == '4':
-    delete_webhook(config, access_token, systems[0]) 
-  elif action == '5':
-    update_webhook_name(config, access_token, systems[0]) 
-  elif action == '6':
-    update_webhook(config, access_token, systems[0]) 
-  else:
-    break  
+    if action == '1':
+      create_webhook(config, access_token, systems[0])
+    elif action == '2':  
+      enumerate_webhooks(config, access_token, systems[0])
+    elif action == '3':
+      get_webhook(config, access_token, systems[0])  
+    elif action == '4':
+      delete_webhook(config, access_token, systems[0]) 
+    elif action == '5':
+      update_webhook_name(config, access_token, systems[0]) 
+    elif action == '6':
+      update_webhook(config, access_token, systems[0]) 
+    else:
+      break  
+else:
+  print('\nNo systems with activated Third Party Integration API found. Did you activate it in the App?\n')
+
