@@ -1,1 +1,29 @@
-{"definition":{"method":"Post","url":"https://awesome.system.local/with/path?and=query#fragment","body":{"contentType":"application/json","content":"{ \"Fake\": \"Payload\" }"},"securityLevel":"TlsAllowSelfSigned","timeout":3141,"additionalHttpHeaders":{"X-Authorize":"Fancy Stuff","X-Some-Other-Header":"More Fancy Stuff","X-Even-More-Headers":"With 5tr@n9E V@l\\/es"},"authentication":{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c","tokenEndpoint":"https://auth.awesome.system.local/token?is=this#allowed&or=not","scope":"trigger-something","clientId":"ekey-client-for-awesome-system-2000","apiAuthenticationType":"OAuth2IssuedAccessToken","expiresIn":null}},"functionWebhookId":"6d5bc183-832a-46cc-ae95-9b27160a4c69","integrationName":"Awesome System 2000","locationName":"At Home","functionName":"Open Something"}
+{
+  "definition": {
+    "method": "Post",
+    "url": "https://awesome.system.local/with/path?and=query#fragment",
+    "body": {
+      "contentType": "application/json",
+      "content": "{ \"Fake\": \"Payload\" }"
+    },
+    "securityLevel": "TlsAllowSelfSigned",
+    "timeout": 3141,
+    "additionalHttpHeaders": {
+      "X-Authorize": "Fancy Stuff",
+      "X-Some-Other-Header": "More Fancy Stuff",
+      "X-Even-More-Headers": "With 5tr@n9E V@l\\/es"
+    },
+    "authentication": {
+      "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c",
+      "tokenEndpoint": "https://auth.awesome.system.local/token?is=this#allowed&or=not",
+      "scope": "trigger-something",
+      "clientId": "ekey-client-for-awesome-system-2000",
+      "apiAuthenticationType": "OAuth2IssuedAccessToken",
+      "expiresIn": null
+    }
+  },
+  "functionWebhookId": "6d5bc183-832a-46cc-ae95-9b27160a4c69",
+  "integrationName": "Awesome System 2000",
+  "locationName": "At Home",
+  "functionName": "Open Something"
+}
