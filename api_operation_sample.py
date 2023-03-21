@@ -31,7 +31,7 @@ def read_webhook():
   #
   # :return: the function webhook to be created or updated
   #
-  onlyfiles = [f for f in listdir('SampleWebHooks') if isfile(join('SampleWebHooks', f))]
+  onlyfiles = [f for f in listdir('SampleWebHooks') if isfile(join('simpleWebHook', f))]
   i = 1
   for file in onlyfiles:
     print('Enter ' + str(i) + " for webhook config >" + file + "<")
